@@ -1,5 +1,6 @@
 <template>
   <div class="page-home">
+    <!-- 首页头部 开始 -->
     <header class="index-header">
       <a href="mine.html?cpid=0">
         <div class="header-user">
@@ -11,12 +12,47 @@
         <div class="header-search"></div>
       </a>
     </header>
+    <!-- 首页头部 结束 -->
+    <Swiper class="my-swiper" @change="onChange">
+      <SwiperItem>
+        <img
+          src="https://img.manhuadao.cn/upload/AdGroup201906/9315f7dd68b346928219f29bd9c89e60.jpg"
+          alt
+        />
+      </SwiperItem>
+      <SwiperItem>
+        <img
+          src="https://img.manhuadao.cn/upload/AdGroup201903/22b43c03a0f943cda001c5338fe0ddd9.jpg"
+          alt
+        />
+      </SwiperItem>
+      <SwiperItem>
+        <img
+          src="https://img.manhuadao.cn/upload/AdGroup202003/dda50e4233e34186910fd490aea1cd91.jpg"
+          alt
+        />
+      </SwiperItem>
+    </Swiper>
   </div>
 </template>
 
 <script>
+
+// import Swiper from '../../components/Swiper/Swiper.vue'
+// import SwiperItem from '../../components/Swiper/SwiperItem.vue'
+import { Swiper, SwiperItem } from '../../components/Swiper'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Swiper,
+    // eslint-disable-next-line vue/no-unused-components
+    SwiperItem
+  },
+  methods: {
+    onChange (index) {
+      console.log('hello', index)
+    }
+  }
 }
 </script>
 
@@ -54,6 +90,7 @@ export default {
         background-size: 100%;
       }
     }
+
     .my-swiper img {
       width: 100%;
     }

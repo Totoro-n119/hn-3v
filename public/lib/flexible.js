@@ -6,8 +6,7 @@
   function setBodyFontSize () {
     if (document.body) {
       document.body.style.fontSize = (12 * dpr) + 'px'
-    }
-    else {
+    } else {
       document.addEventListener('DOMContentLoaded', setBodyFontSize)
     }
   }
