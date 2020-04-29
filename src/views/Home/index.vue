@@ -13,6 +13,7 @@
       </a>
     </header>
     <!-- 首页头部 结束 -->
+    <br>
     <Swiper class="my-swiper" @change="onChange">
       <SwiperItem>
         <img
@@ -57,13 +58,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "@/assets/styles/mixins.scss";
   .page-home {
     display: flex;
     flex-direction: column;
     height: 100%;
 
     .index-header {
+      @include border-bottom;
       display: flex;
       justify-content: space-between;
       align-items: center;
